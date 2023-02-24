@@ -141,18 +141,18 @@ buttons.map( button => {
         switch(e.target.innerText) {
 
             case 'RESET':
-                result.innerText = 0;
-                break;
-            case 'DEL':
-                if(result.innerText) {
-                    result.innerText = result.innerText.slice(0,-1);
-                }
+                result.innerText = '';
                 break;
             case '=':
                 try{
                     result.innerText = eval(result.innerText);
                 }catch {
                     result.innerText = 'Error!'
+                }
+                break;
+            case 'DEL':
+                if(result.innerText) {
+                    result.innerText = result.innerText.slice(0,-1);
                 }
                 break;
 
